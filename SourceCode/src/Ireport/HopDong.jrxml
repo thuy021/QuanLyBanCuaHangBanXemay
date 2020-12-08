@@ -1,0 +1,498 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="36366614-1983-4bfc-b74f-5f4c3bc1b6d4">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="334"/>
+	<queryString>
+		<![CDATA[SELECT
+     ChiTietHoaDon."maHD" AS ChiTietHoaDon_maHD,
+     ChiTietHoaDon."maXe" AS ChiTietHoaDon_maXe,
+     ChiTietHoaDon."soLuong" AS ChiTietHoaDon_soLuong,
+     ChiTietHoaDon."donGia" AS ChiTietHoaDon_donGia,
+     ChiTietHoaDon."thanhTien" AS ChiTietHoaDon_thanhTien,
+     ChiTietHoaDon."thueXe" AS ChiTietHoaDon_thueXe,
+     HoaDon."maHD" AS HoaDon_maHD,
+     HoaDon."maNV" AS HoaDon_maNV,
+     HoaDon."maKH" AS HoaDon_maKH,
+     HoaDon."ngayLap" AS HoaDon_ngayLap,
+     HoaDon."tongTien" AS HoaDon_tongTien,
+     HopDong."maHopDong" AS HopDong_maHopDong,
+     HopDong."maHD" AS HopDong_maHD,
+     HopDong."ngayLapHopDong" AS HopDong_ngayLapHopDong,
+     KhachHang."maKH" AS KhachHang_maKH,
+     KhachHang."hoTenKH" AS KhachHang_hoTenKH,
+     KhachHang."soCMND" AS KhachHang_soCMND,
+     KhachHang."gioiTinh" AS KhachHang_gioiTinh,
+     KhachHang."ngaySinh" AS KhachHang_ngaySinh,
+     KhachHang."email" AS KhachHang_email,
+     KhachHang."soDienThoai" AS KhachHang_soDienThoai,
+     KhachHang."diaChi" AS KhachHang_diaChi,
+     NhanVien."maNV" AS NhanVien_maNV,
+     NhanVien."hoTen" AS NhanVien_hoTen,
+     NhanVien."soCMND" AS NhanVien_soCMND,
+     NhanVien."gioiTinh" AS NhanVien_gioiTinh,
+     NhanVien."ngaySinh" AS NhanVien_ngaySinh,
+     NhanVien."email" AS NhanVien_email,
+     NhanVien."soDienThoai" AS NhanVien_soDienThoai,
+     NhanVien."taiKhoan" AS NhanVien_taiKhoan,
+     NhanVien."matKhau" AS NhanVien_matKhau,
+     NhanVien."diaChi" AS NhanVien_diaChi,
+     NhanVien."chucVu" AS NhanVien_chucVu,
+     XeMay."maXe" AS XeMay_maXe,
+     XeMay."tenXe" AS XeMay_tenXe,
+     XeMay."soKhung" AS XeMay_soKhung,
+     XeMay."soMay" AS XeMay_soMay,
+     XeMay."maHangXe" AS XeMay_maHangXe,
+     XeMay."maLoaiXe" AS XeMay_maLoaiXe,
+     XeMay."maMauXe" AS XeMay_maMauXe,
+     XeMay."dungTich" AS XeMay_dungTich,
+     XeMay."soLuongXe" AS XeMay_soLuongXe,
+     XeMay."giaXe" AS XeMay_giaXe,
+     XeMay."anhXe" AS XeMay_anhXe,
+     MauXe."maMauXe" AS MauXe_maMauXe,
+     MauXe."mauXe" AS MauXe_mauXe,
+     LoaiXe."maLoaiXe" AS LoaiXe_maLoaiXe,
+     LoaiXe."tenLoaiXe" AS LoaiXe_tenLoaiXe,
+     HangXe."maHangXe" AS HangXe_maHangXe,
+     HangXe."tenHang" AS HangXe_tenHang
+FROM
+     "dbo"."HoaDon" HoaDon INNER JOIN "dbo"."ChiTietHoaDon" ChiTietHoaDon ON HoaDon."maHD" = ChiTietHoaDon."maHD"
+     INNER JOIN "dbo"."HopDong" HopDong ON HoaDon."maHD" = HopDong."maHD"
+     INNER JOIN "dbo"."KhachHang" KhachHang ON HoaDon."maKH" = KhachHang."maKH"
+     INNER JOIN "dbo"."NhanVien" NhanVien ON HoaDon."maNV" = NhanVien."maNV"
+     INNER JOIN "dbo"."XeMay" XeMay ON ChiTietHoaDon."maXe" = XeMay."maXe"
+     INNER JOIN "dbo"."MauXe" MauXe ON XeMay."maMauXe" = MauXe."maMauXe"
+     INNER JOIN "dbo"."LoaiXe" LoaiXe ON XeMay."maLoaiXe" = LoaiXe."maLoaiXe"
+     INNER JOIN "dbo"."HangXe" HangXe ON XeMay."maHangXe" = HangXe."maHangXe"
+WHERE HoaDon."maHD" = HopDOng."maHD"]]>
+	</queryString>
+	<field name="ChiTietHoaDon_maHD" class="java.lang.String"/>
+	<field name="ChiTietHoaDon_maXe" class="java.lang.String"/>
+	<field name="ChiTietHoaDon_soLuong" class="java.lang.Integer"/>
+	<field name="ChiTietHoaDon_donGia" class="java.math.BigDecimal"/>
+	<field name="ChiTietHoaDon_thanhTien" class="java.math.BigDecimal"/>
+	<field name="ChiTietHoaDon_thueXe" class="java.lang.Double"/>
+	<field name="HoaDon_maHD" class="java.lang.String"/>
+	<field name="HoaDon_maNV" class="java.lang.String"/>
+	<field name="HoaDon_maKH" class="java.lang.String"/>
+	<field name="HoaDon_ngayLap" class="java.sql.Date"/>
+	<field name="HoaDon_tongTien" class="java.lang.String"/>
+	<field name="HopDong_maHopDong" class="java.lang.String"/>
+	<field name="HopDong_maHD" class="java.lang.String"/>
+	<field name="HopDong_ngayLapHopDong" class="java.sql.Date"/>
+	<field name="KhachHang_maKH" class="java.lang.String"/>
+	<field name="KhachHang_hoTenKH" class="java.lang.String"/>
+	<field name="KhachHang_soCMND" class="java.lang.String"/>
+	<field name="KhachHang_gioiTinh" class="java.lang.Boolean"/>
+	<field name="KhachHang_ngaySinh" class="java.sql.Date"/>
+	<field name="KhachHang_email" class="java.lang.String"/>
+	<field name="KhachHang_soDienThoai" class="java.lang.String"/>
+	<field name="KhachHang_diaChi" class="java.lang.String"/>
+	<field name="NhanVien_maNV" class="java.lang.String"/>
+	<field name="NhanVien_hoTen" class="java.lang.String"/>
+	<field name="NhanVien_soCMND" class="java.lang.String"/>
+	<field name="NhanVien_gioiTinh" class="java.lang.Boolean"/>
+	<field name="NhanVien_ngaySinh" class="java.sql.Date"/>
+	<field name="NhanVien_email" class="java.lang.String"/>
+	<field name="NhanVien_soDienThoai" class="java.lang.String"/>
+	<field name="NhanVien_taiKhoan" class="java.lang.String"/>
+	<field name="NhanVien_matKhau" class="java.lang.String"/>
+	<field name="NhanVien_diaChi" class="java.lang.String"/>
+	<field name="NhanVien_chucVu" class="java.lang.String"/>
+	<field name="XeMay_maXe" class="java.lang.String"/>
+	<field name="XeMay_tenXe" class="java.lang.String"/>
+	<field name="XeMay_soKhung" class="java.lang.String"/>
+	<field name="XeMay_soMay" class="java.lang.String"/>
+	<field name="XeMay_maHangXe" class="java.lang.String"/>
+	<field name="XeMay_maLoaiXe" class="java.lang.String"/>
+	<field name="XeMay_maMauXe" class="java.lang.String"/>
+	<field name="XeMay_dungTich" class="java.lang.Integer"/>
+	<field name="XeMay_soLuongXe" class="java.lang.Integer"/>
+	<field name="XeMay_giaXe" class="java.math.BigDecimal"/>
+	<field name="XeMay_anhXe" class="java.lang.String"/>
+	<field name="MauXe_maMauXe" class="java.lang.String"/>
+	<field name="MauXe_mauXe" class="java.lang.String"/>
+	<field name="LoaiXe_maLoaiXe" class="java.lang.String"/>
+	<field name="LoaiXe_tenLoaiXe" class="java.lang.String"/>
+	<field name="HangXe_maHangXe" class="java.lang.String"/>
+	<field name="HangXe_tenHang" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="151" splitType="Stretch">
+			<staticText>
+				<reportElement x="135" y="11" width="304" height="20" uuid="26ecc8a8-09f9-4eb8-9fcb-36e6dbd66ce8"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<text><![CDATA[CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="198" y="31" width="187" height="20" uuid="4977838d-4ea2-4ab3-8763-4063b752f320"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<text><![CDATA[Độc lập - Tự do - Hạnh phúc]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="231" y="51" width="167" height="20" uuid="51f6aeb2-07de-46d7-9c66-5c348c93d066"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<text><![CDATA[---------***---------]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="108" y="71" width="374" height="47" uuid="bf29983e-e049-43d1-8201-bbdb4ffed670"/>
+				<textElement>
+					<font fontName="Times New Roman" size="24" isBold="true"/>
+				</textElement>
+				<text><![CDATA[HỢP ĐỒNG MUA BÁN XE MÁY]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="342" y="131" width="100" height="20" uuid="2b0055ff-659c-4046-99b1-3ada4a3b2fc4"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<text><![CDATA[Mã hợp đồng ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="442" y="131" width="101" height="20" uuid="eae49b8d-8e83-4869-b9ec-0c160d39c055"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{HopDong_maHopDong}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="425" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="439" height="20" uuid="5b9bd00e-7a11-463b-86a2-7964f2c3c81a"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<text><![CDATA[Hôm nay, ngày ...... tháng ........ năm ......., tại ....................., chúng tôi gồm có:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="32" width="155" height="20" uuid="45f4cef8-4a70-4c7d-abed-56d5b129bd7b"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[BÊN BÁN (BÊN A)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="63" width="155" height="20" uuid="e22b01d0-3727-4032-9364-18e6989e9a54"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<text><![CDATA[Ông(Bà):]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="83" width="155" height="20" uuid="ea45f363-7634-4466-94b6-988cc3965f33"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<text><![CDATA[Sinh ngày:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="103" width="155" height="20" uuid="79314d75-fe2a-4638-91bc-2437bcd22101"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<text><![CDATA[CMND số:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="177" y="63" width="282" height="20" uuid="2b6dba5f-3b5d-4067-9fab-7637584afa71"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{NhanVien_hoTen}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="177" y="83" width="282" height="20" uuid="9ebb837f-7d45-4220-8219-d26bb7e82726"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{NhanVien_ngaySinh}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="177" y="103" width="282" height="20" uuid="e0faf563-77f6-4725-82c5-2f573483ce30"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{NhanVien_soCMND}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="141" width="139" height="20" uuid="54c9bb42-ec47-4e22-a576-305167782b82"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[BÊN MUA(BÊN B)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="173" width="155" height="20" uuid="4af2ba03-2c4b-4dea-b352-1465230fa9b5"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<text><![CDATA[Ông (Bà):]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="193" width="155" height="20" uuid="1cd05942-6ce1-4a44-9832-65cb3e57911e"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<text><![CDATA[Sinh ngày:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="213" width="155" height="20" uuid="9fee0f43-0c5f-453b-affa-d745e127f831"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<text><![CDATA[CMND số:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="177" y="173" width="252" height="20" uuid="6231ecc8-faa1-4fc4-9cd0-d846a7aec191"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{KhachHang_hoTenKH}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="177" y="193" width="252" height="20" uuid="93447c1e-f3e2-488e-bf2d-bc4a387f4183"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{KhachHang_ngaySinh}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="177" y="213" width="252" height="20" uuid="35312271-8f18-43e3-9a37-322325bdf957"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{KhachHang_soCMND}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="233" width="155" height="20" uuid="a3887935-6340-4e1a-aadb-89a297e14c65"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<text><![CDATA[Hộ khẩu thường trú:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="177" y="233" width="325" height="20" uuid="96be45d2-3d0c-4472-a47e-d17313a26265"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{KhachHang_diaChi}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="273" width="555" height="35" uuid="e6dfab58-5d0e-4b2e-b9a1-292fd2bca4b1"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<text><![CDATA[Chúng tôi tự nguyện cùng nhau lập và ký bản hợp đồng này để thực hiện việc mua bán xe máy/xe môtô, với những điều khoản đã được hai bên bàn bạc và thoả thuận như sau:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="320" width="208" height="20" uuid="fd8194e2-9c0f-41f2-a573-37216cabc57a"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ĐIỀU 1: ĐẶC ĐIỂM XE MUA BÁN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="350" width="362" height="20" uuid="e2b1a5cc-174b-47a7-b8d6-a0cd7efab64e"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<text><![CDATA[Bên bán là chủ sở hữu của chiếc xe máy/xe môtô nhãn hiệu:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="362" y="350" width="100" height="20" uuid="bc26c638-e838-4acf-9892-1142d7279f07"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{XeMay_tenXe}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="380" width="54" height="20" uuid="c0fc9f00-2b78-4b68-b890-161c932a2db5"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<text><![CDATA[Loại xe:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="54" y="380" width="65" height="20" uuid="51bda9e7-ab99-4d42-b912-9ff5d47d21ff"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{LoaiXe_tenLoaiXe}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="119" y="380" width="58" height="20" uuid="9ee73f64-b438-4b60-aaba-5241d0ecca06"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<text><![CDATA[màu sơn]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="177" y="380" width="54" height="20" uuid="b6bb66eb-cac4-4edb-9d73-4c10bde5e7c2"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{MauXe_mauXe}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="231" y="380" width="49" height="20" uuid="fb36d85f-2c68-4cb5-8b30-82e7445736db"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<text><![CDATA[số máy:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="285" y="380" width="95" height="20" uuid="9195f5d5-b951-4e30-be35-7eb3e22b134d"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{XeMay_soMay}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="380" y="380" width="59" height="20" uuid="caf78c2a-7253-42da-9955-3708a1cc1769"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<text><![CDATA[số khung:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="442" y="380" width="113" height="20" uuid="7dea13b3-a7ad-4c26-a1f7-802e88dd6d7a"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{XeMay_soKhung}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="66" y="400" width="42" height="20" uuid="6670bdda-480d-49e3-b5e9-1171b207ec77"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{XeMay_dungTich}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="400" width="66" height="20" uuid="ddfde607-d9e9-4984-9bf2-50cec0270d0c"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<text><![CDATA[dung tích:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="108" y="400" width="22" height="20" uuid="0ff76dbb-ea48-468d-a78c-e97fd945dd3b"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<text><![CDATA[cc]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="95" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="260" height="20" uuid="901c7b8f-a033-43d8-b45f-b0acc47604f1"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ĐIỀU 2: SỰ THỎA THUẬN MUA BÁN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="20" width="555" height="20" uuid="8a631753-6958-4a05-a3a2-d245bf29923b"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<text><![CDATA[2.1. Bên bán đồng ý bán và Bên mua đồng ý mua chiếc xe nói trên như hiện trạng với giá là:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="40" width="108" height="20" uuid="196a59db-f01f-4eb9-bb0a-1ef3f071a618"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ChiTietHoaDon_thanhTien}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="108" y="40" width="38" height="20" uuid="334e63a6-e934-43f7-bffb-0a71d126df1e"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<text><![CDATA[VNĐ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="155" y="40" width="304" height="20" uuid="6a406ea4-b827-436c-bb8c-ce5c40db7a9e"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<text><![CDATA[và không thay đổi vì bất kỳ lý do gì.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="60" width="555" height="35" uuid="cb161e0b-4e26-4e89-8482-6f48df9c93bc"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<text><![CDATA[2.2. Bên bán đã nhận đủ tiền do Bên mua trả và đã giao xe đúng như hiện trạng cho Bên mua cùng toàn bộ giấy tờ có liên quan đến chiếc xe này.]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band height="58" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="198" height="20" uuid="14608c1d-8d76-4ae4-8caf-879ae8803b13"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ĐIỀU 3: ĐIỀU KHOẢN CUỐI CÙNG]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="6" y="20" width="549" height="38" uuid="6390a89c-7170-4181-9f22-6e1db2c483ce"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<text><![CDATA[Hai bên đã tự đọc lại nguyên văn bản hợp đồng này, đều hiểu và chấp thuận toàn bộ nội dung của hợp đồng, không có điều gì vướng mắc. Hai bên cùng ký tên dưới đây để làm bằng chứng.]]></text>
+			</staticText>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="73" splitType="Stretch">
+			<staticText>
+				<reportElement x="60" y="0" width="48" height="25" uuid="36b08c7f-d159-4b1a-8752-034511444a04"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<text><![CDATA[BÊN A]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="439" y="0" width="48" height="25" uuid="8acdd7a7-6506-488d-8e35-0292b763ca44"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<text><![CDATA[BÊN B]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="17" y="25" width="138" height="25" uuid="01683084-3f56-48f5-8b21-9f32a561de37"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<text><![CDATA[(Ký, ghi rõ họ và tên)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="398" y="25" width="138" height="25" uuid="a4009e4a-d829-49ac-909f-f3364e887d45"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<text><![CDATA[(Ký, ghi rõ họ và tên)]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="523" splitType="Stretch"/>
+	</summary>
+</jasperReport>
